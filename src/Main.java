@@ -25,30 +25,25 @@ public class Main {
             int option = in.nextInt();
 
             switch (option) {
-                case 1:
-                    randomLegends();
-                    break;
-                case 2:
-                    randomWeapons();
-                    break;
-                case 3:
+                case 1 -> randomLegends();
+                case 2 -> randomWeapons();
+                case 3 -> {
                     randomLegends();
                     randomWeapons();
-                    break;
-                case 4:
+                }
+                case 4 -> {
                     System.out.println("How many random weapon loadouts would you like?");
                     int amount = in.nextInt();
                     for (int i = 0; i < amount; i++) {
                         System.out.println("Loadout " + (i + 1) + ": ");
                         randomWeapons();
                     }
-                    break;
-                case 5:
+                }
+                case 5 -> {
+                    System.out.println("Thank you for using Apex Legend Roulette!");
                     isRunning = false;
-                    break;
-                default:
-                    System.out.println("Invalid option, please try again.");
-                    break;
+                }
+                default -> System.out.println("Invalid option, please try again.");
             }
         }
     }
